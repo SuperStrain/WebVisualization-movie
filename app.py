@@ -15,10 +15,20 @@ def home():
 
 @app.route('/movie')
 def movie():
+    datalist=[]
+
     con=sqlite3.connect("movie.db")
     cur=con.cursor()
-    sql="select * from"
-    return render_template('movie.html')
+    sql="select * from movie250"
+    data=cur.execute(sql)
+
+    for item in data:   #变量存储数据库数据
+        datalist.append(item)
+
+    cur.close()
+    con.close()
+
+    return render_template('movie.html',movies=datalist)
 
 @app.route('/score')
 def score():
