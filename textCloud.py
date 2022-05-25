@@ -53,5 +53,5 @@ fig=plt.figure(1)
 plt.imshow(wc)
 plt.axis('off')     #是否显示坐标
 # plt.show()#测试显示结果
-plt.savefig(r'.\static\assets\img\wordcloud.jpg',dpi=500)
+plt.savefig(r'.\static\assets\img\wordcloud.jpg',dpi=500)#生成图片
 
